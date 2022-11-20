@@ -4,13 +4,23 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This Project is clone of google docs it will work in android, IOS, Web.
 
-A few resources to get you started if this is your first Flutter project:
+## Web
+To run this app in port 
+ ```
+  flutter run -d chrome --web-hostname localhost --web-port 3000
+ ```
+## server 
+# Step 1
+```
+npm init
+```
+```
+ npm i express http socket.io jsonwebtoken mongoose
+```
+# install at devDependencies
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+npm i nodemon --save-dev
+```
