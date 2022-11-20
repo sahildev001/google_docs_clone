@@ -5,7 +5,6 @@ import 'package:google_docs_clone/model/error_model.dart';
 import 'package:google_docs_clone/model/user_model.dart';
 import 'package:google_docs_clone/utils/constants.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'dart:developer' as dev;
 import 'package:http/http.dart';
 
 final authRepositoryProvider = Provider(
@@ -42,13 +41,15 @@ class AuthRepository {
 
         switch (result.statusCode) {
           case 200:
+            print("sign up error ${result.body}");
             final newUser = userAcc.copyWith(
-                uid: jsonDecode(result.body)['user']['_id'], token: "");
+                uid: jsonDecode(result.body)['user'][0]['_id'], token: "");
             errorModel = ErrorModel(error: null, data: newUser);
             break;
         }
       }
     } catch (e) {
+      print('$e');
       errorModel = ErrorModel(error: e.toString(), data: null);
     }
     return errorModel;

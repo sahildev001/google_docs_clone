@@ -5,6 +5,7 @@ const authRouter = express.Router();
 
 //signup api
 authRouter.post("/api/signUp",async (req,res)=>{
+    console.log(`call`);
 
     try{
         const { name, email, profilePic} =  req.body;
@@ -18,7 +19,6 @@ authRouter.post("/api/signUp",async (req,res)=>{
         });
         user = await user.save();
        }
-
        res.status(200).json({user});
     }catch(e){
       console.log(`signUp exception ::  ${e}`);
